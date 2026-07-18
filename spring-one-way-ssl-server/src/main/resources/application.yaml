@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: spring-one-way-ssl-server
