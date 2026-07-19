@@ -1,3 +1,18 @@
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    bundle: one-way-server
 spring:
   application:
     name: spring-one-way-ssl-server
+  ssl:
+    bundle:
+      jks:
+        one-way-server:
+          key:
+            alias: one-way-server
+          keystore:
+            location: classpath:certs/one-way-server-keystore.p12
+            password: changeit
+            type: PKCS12

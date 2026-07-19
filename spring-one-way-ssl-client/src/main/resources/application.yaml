@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+secure-server:
+  base-url: https://localhost:8443
+  ssl-bundle: one-way-client
+
+spring:
+  application:
+    name: spring-one-way-ssl-client
+  ssl:
+    bundle:
+      jks:
+        one-way-client:
+          truststore:
+            location: classpath:certs/one-way-client-truststore.p12
+            password: changeit
+            type: PKCS12
