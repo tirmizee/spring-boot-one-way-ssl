@@ -28,10 +28,11 @@ public class WebClientConfig {
 
         var sslBundle = sslBundles.getBundle(sslBundleName);
         var sslBundleOptions = sslBundle.getOptions();
+        var sslManagers = sslBundle.getManagers();
 
         var sslContextBuilder = SslContextBuilder.forClient()
-                .keyManager(sslBundle.getManagers().getKeyManagerFactory())
-                .trustManager(sslBundle.getManagers().getTrustManagerFactory());
+                .keyManager(sslManagers.getKeyManagerFactory())
+                .trustManager(sslManagers.getTrustManagerFactory());
 
         if (sslBundleOptions.getEnabledProtocols() != null) {
             sslContextBuilder.protocols(sslBundleOptions.getEnabledProtocols());
