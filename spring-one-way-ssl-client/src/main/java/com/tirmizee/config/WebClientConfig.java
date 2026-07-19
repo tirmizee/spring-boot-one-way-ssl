@@ -48,7 +48,7 @@ public class WebClientConfig {
 
         return WebClient.builder()
                 .baseUrl(baseUrl)
-//                .clientConnector(new ReactorClientHttpConnector(httpClient))
+                .clientConnector(new ReactorClientHttpConnector(httpClient))
                 .build();
     }
 }
